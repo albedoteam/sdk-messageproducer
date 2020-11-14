@@ -1,8 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageProducerSdk", "MessageProducerSdk\MessageProducerSdk.csproj", "{B17714E8-F6CE-4B6A-B694-F409D9A17F83}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageConsumerSdk", "..\..\message-consumer-sdk\MessageConsumerSdk\MessageConsumerSdk\MessageConsumerSdk.csproj", "{1512D63E-3C5D-4286-B024-941C5A9C31DF}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessageProducerSdk", "MessageProducerSdk\MessageProducerSdk.csproj", "{B17714E8-F6CE-4B6A-B694-F409D9A17F83}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,9 +15,11 @@ Global
 		{B17714E8-F6CE-4B6A-B694-F409D9A17F83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B17714E8-F6CE-4B6A-B694-F409D9A17F83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B17714E8-F6CE-4B6A-B694-F409D9A17F83}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1512D63E-3C5D-4286-B024-941C5A9C31DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1512D63E-3C5D-4286-B024-941C5A9C31DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1512D63E-3C5D-4286-B024-941C5A9C31DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1512D63E-3C5D-4286-B024-941C5A9C31DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {30431F85-FB74-4420-A574-A7476AD9E0D9}
 	EndGlobalSection
 EndGlobal

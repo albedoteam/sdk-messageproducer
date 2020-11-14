@@ -7,10 +7,7 @@
     <ItemGroup>
         <PackageReference Include="MassTransit.AspNetCore" Version="7.0.4" />
         <PackageReference Include="MassTransit.Extensions.DependencyInjection" Version="7.0.4" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\..\..\message-consumer-sdk\MessageConsumerSdk\MessageConsumerSdk\MessageConsumerSdk.csproj" />
+        <PackageReference Include="MessageConsumerSdk" Version="1.0.5" />
     </ItemGroup>
 
 </Project>
