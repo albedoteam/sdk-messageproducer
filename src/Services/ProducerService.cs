@@ -1,8 +1,8 @@
 using System.Threading.Tasks;
+using AlbedoTeam.Sdk.MessageProducer.Services.Abstractions;
 using MassTransit;
-using MessageProducerSdk.Services.Abstractions;
 
-namespace MessageProducerSdk.Services
+namespace AlbedoTeam.Sdk.MessageProducer.Services
 {
     public class ProducerService : IProducerService
     {

@@ -2,15 +2,14 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
+        <RootNamespace>AlbedoTeam.Sdk.MessageProducer</RootNamespace>
+        <AssemblyName>albedoteam-sdk-messageproducer</AssemblyName>
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="albedoteam-sdk-messageconsumer" Version="1.0.9" />
         <PackageReference Include="MassTransit.AspNetCore" Version="7.0.4" />
         <PackageReference Include="MassTransit.Extensions.DependencyInjection" Version="7.0.4" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\..\..\message-consumer-sdk\MessageConsumerSdk\MessageConsumerSdk\MessageConsumerSdk.csproj" />
     </ItemGroup>
 
 </Project>
