@@ -5,7 +5,7 @@
 
         <IsPackable>false</IsPackable>
 
-        <AssemblyName>albedoteam-sdk-messageproducer-tests</AssemblyName>
+        <AssemblyName>AlbedoTeam.Sdk.MessageProducer.Tests</AssemblyName>
 
         <RootNamespace>AlbedoTeam.Sdk.MessageProducer.Tests</RootNamespace>
     </PropertyGroup>
