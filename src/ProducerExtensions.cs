@@ -1,13 +1,13 @@
 ﻿using System;
+using AlbedoTeam.Sdk.MessageConsumer;
+using AlbedoTeam.Sdk.MessageConsumer.Configuration.Abstractions;
+using AlbedoTeam.Sdk.MessageProducer.Services;
+using AlbedoTeam.Sdk.MessageProducer.Services.Abstractions;
 using MassTransit;
-using MessageConsumerSdk;
-using MessageConsumerSdk.Configuration.Abstractions;
-using MessageProducerSdk.Services;
-using MessageProducerSdk.Services.Abstractions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace MessageProducerSdk
+namespace AlbedoTeam.Sdk.MessageProducer
 {
     public static class ProducerExtensions
     {

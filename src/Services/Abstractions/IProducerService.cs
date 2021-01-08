@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 
-namespace MessageProducerSdk.Services.Abstractions
+namespace AlbedoTeam.Sdk.MessageProducer.Services.Abstractions
 {
     public interface IProducerService
     {
