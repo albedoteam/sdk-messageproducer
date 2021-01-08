@@ -4,7 +4,6 @@ using AlbedoTeam.Sdk.MessageConsumer.Configuration.Abstractions;
 using AlbedoTeam.Sdk.MessageProducer.Services;
 using AlbedoTeam.Sdk.MessageProducer.Services.Abstractions;
 using MassTransit;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace AlbedoTeam.Sdk.MessageProducer
@@ -14,27 +13,50 @@ namespace AlbedoTeam.Sdk.MessageProducer
         public static IServiceCollection AddProducer(
             this IServiceCollection services,
             Action<IMessageBrokerOptions> configureBroker,
-            Action<IConsumerRegistration> consumers)
+            Action<IConsumerRegistration> configureConsumers)
         {
-            return services.AddProducerOnHub(configureBroker, consumers);
+            return services.AddProducerOnHub(configureBroker, configureConsumers);
         }
 
         public static IServiceCollection AddProducer(
             this IServiceCollection services,
             Action<IMessageBrokerOptions> configureBroker,
-            Action<IConsumerRegistration> consumers,
-            Action<IDestinationQueueMapper> queues)
+            Action<IConsumerRegistration> configureConsumers,
+            Action<IDestinationQueueMapper> configureDestinationQueues)
         {
-            return services.AddProducerOnHub(configureBroker, consumers, queues);
+            return services.AddProducerOnHub(configureBroker, configureConsumers, configureDestinationQueues);
         }
 
-        public static IServiceCollection AddProducerOnHub(
+        public static IServiceCollection AddProducer(
             this IServiceCollection services,
             Action<IMessageBrokerOptions> configureBroker,
-            Action<IConsumerRegistration> consumers = null,
-            Action<IDestinationQueueMapper> queues = null)
+            Action<IConsumerRegistration> configureConsumers,
+            Action<IDestinationQueueMapper> configureDestinationQueues,
+            Action<IRequestClientRegistration> configureRequestClients)
         {
-            services.AddBroker(configureBroker, consumers, queues);
+            return services.AddProducerOnHub(configureBroker, configureConsumers, configureDestinationQueues,
+                configureRequestClients);
+        }
+
+        public static IServiceCollection AddProducer(
+            this IServiceCollection services,
+            Action<IMessageBrokerOptions> configureBroker,
+            Action<IRequestClientRegistration> configureRequestClients)
+        {
+            return services.AddProducerOnHub(configureBroker, null, null,
+                configureRequestClients);
+        }
+
+        private static IServiceCollection AddProducerOnHub(
+            this IServiceCollection services,
+            Action<IMessageBrokerOptions> configureBroker,
+            Action<IConsumerRegistration> configureConsumers = null,
+            Action<IDestinationQueueMapper> configureDestinationQueues = null,
+            Action<IRequestClientRegistration> configureRequestClients = null)
+        {
+            services.AddBroker(configureBroker, configureConsumers, configureDestinationQueues,
+                configureRequestClients);
+
             services.AddMassTransitHostedService();
             services.AddScoped<IProducerService, ProducerService>();
 
