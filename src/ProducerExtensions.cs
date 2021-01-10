@@ -12,15 +12,7 @@ namespace AlbedoTeam.Sdk.MessageProducer
     {
         public static IServiceCollection AddProducer(
             this IServiceCollection services,
-            Action<IMessageBrokerOptions> configureBroker,
-            Action<IConsumerRegistration> configureConsumers)
-        {
-            return services.AddProducerOnHub(configureBroker, configureConsumers);
-        }
-
-        public static IServiceCollection AddProducer(
-            this IServiceCollection services,
-            Action<IMessageBrokerOptions> configureBroker,
+            Action<IBrokerConfigurator> configureBroker,
             Action<IConsumerRegistration> configureConsumers,
             Action<IDestinationQueueMapper> configureDestinationQueues)
         {
@@ -29,7 +21,7 @@ namespace AlbedoTeam.Sdk.MessageProducer
 
         public static IServiceCollection AddProducer(
             this IServiceCollection services,
-            Action<IMessageBrokerOptions> configureBroker,
+            Action<IBrokerConfigurator> configureBroker,
             Action<IConsumerRegistration> configureConsumers,
             Action<IDestinationQueueMapper> configureDestinationQueues,
             Action<IRequestClientRegistration> configureRequestClients)
@@ -40,7 +32,7 @@ namespace AlbedoTeam.Sdk.MessageProducer
 
         public static IServiceCollection AddProducer(
             this IServiceCollection services,
-            Action<IMessageBrokerOptions> configureBroker,
+            Action<IBrokerConfigurator> configureBroker,
             Action<IRequestClientRegistration> configureRequestClients)
         {
             return services.AddProducerOnHub(configureBroker, null, null,
@@ -49,7 +41,7 @@ namespace AlbedoTeam.Sdk.MessageProducer
 
         private static IServiceCollection AddProducerOnHub(
             this IServiceCollection services,
-            Action<IMessageBrokerOptions> configureBroker,
+            Action<IBrokerConfigurator> configureBroker,
             Action<IConsumerRegistration> configureConsumers = null,
             Action<IDestinationQueueMapper> configureDestinationQueues = null,
             Action<IRequestClientRegistration> configureRequestClients = null)
