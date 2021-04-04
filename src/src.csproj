@@ -7,9 +7,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="AlbedoTeam.Sdk.MessageConsumer" Version="1.0.0-CI-20210227-011616" />
-        <PackageReference Include="MassTransit.AspNetCore" Version="7.0.4" />
-        <PackageReference Include="MassTransit.Extensions.DependencyInjection" Version="7.0.4" />
+      <PackageReference Include="AlbedoTeam.Sdk.MessageConsumer" Version="1.0.0-CI-20210404-151638" />
+      <PackageReference Include="MassTransit.AspNetCore" Version="7.1.7" />
+      <PackageReference Include="MassTransit.Extensions.DependencyInjection" Version="7.1.7" />
     </ItemGroup>
 
 </Project>
